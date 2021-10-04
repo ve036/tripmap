@@ -507,6 +507,25 @@
         "height": 1
     },
     {
+        "id": "d5c06a430f677e1d",
+        "type": "serial-port",
+        "serialport": "COM4",
+        "serialbaud": "57600",
+        "databits": "8",
+        "parity": "none",
+        "stopbits": "1",
+        "waitfor": "",
+        "dtr": "none",
+        "rts": "none",
+        "cts": "none",
+        "dsr": "none",
+        "newline": "\\n",
+        "bin": "false",
+        "out": "char",
+        "addchar": "",
+        "responsetimeout": "10000"
+    },
+    {
         "id": "f2c25326ad03b429",
         "type": "debug",
         "z": "6a448931486328a7",
@@ -4975,5 +4994,17 @@
         "x": 760,
         "y": 320,
         "wires": []
+    },
+    {
+        "id": "88b6b18499ed1873",
+        "type": "serial in",
+        "z": "2c7f0337e3190884",
+        "name": "",
+        "serial": "d5c06a430f677e1d",
+        "x": 1200,
+        "y": 160,
+        "wires": [
+            []
+        ]
     }
 ]
