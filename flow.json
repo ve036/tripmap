@@ -2919,7 +2919,7 @@
         "type": "debug",
         "z": "af3d37bbb5024b33",
         "name": "",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -5354,7 +5354,7 @@
         "type": "debug",
         "z": "7b624de9a6f82b42",
         "name": "",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -5853,27 +5853,6 @@
         "y": 460,
         "wires": [
             []
-        ]
-    },
-    {
-        "id": "af64c6552f94a2da",
-        "type": "gpsd",
-        "z": "7b624de9a6f82b42",
-        "name": "",
-        "hostname": "192.168.24.65",
-        "port": "2947",
-        "tpv": true,
-        "sky": false,
-        "info": false,
-        "device": false,
-        "gst": false,
-        "att": false,
-        "x": 110,
-        "y": 100,
-        "wires": [
-            [
-                "1e48520eee149a01"
-            ]
         ]
     },
     {
