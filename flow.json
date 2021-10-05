@@ -28,13 +28,6 @@
         "info": ""
     },
     {
-        "id": "7b624de9a6f82b42",
-        "type": "tab",
-        "label": "フロー 1",
-        "disabled": false,
-        "info": ""
-    },
-    {
         "id": "77a4e3ed495f55d2",
         "type": "subflow",
         "name": "LINE作成",
@@ -2488,6 +2481,7 @@
         "z": "083b23ab72f662ce",
         "name": "",
         "links": [
+            "c5389aa70a263afa",
             "ce6f4b8bbd89b451"
         ],
         "x": 675,
@@ -5117,7 +5111,8 @@
         "z": "aeb7525ab85c57cf",
         "name": "line3",
         "links": [
-            "c13e87947858f40a"
+            "c13e87947858f40a",
+            "619016e55ac7e0ca"
         ],
         "x": 1185,
         "y": 680,
@@ -5129,7 +5124,8 @@
         "z": "006e761ebec3950a",
         "name": "line1",
         "links": [
-            "5bc8b1cd9e2e17d8"
+            "5bc8b1cd9e2e17d8",
+            "a9dd9c08d420fbc1"
         ],
         "x": 1065,
         "y": 720,
@@ -5141,7 +5137,8 @@
         "z": "083b23ab72f662ce",
         "name": "",
         "links": [
-            "49005e76c77f4e29"
+            "49005e76c77f4e29",
+            "663640312deeddb3"
         ],
         "x": 675,
         "y": 280,
@@ -5348,22 +5345,6 @@
         "wires": [
             []
         ]
-    },
-    {
-        "id": "1e48520eee149a01",
-        "type": "debug",
-        "z": "7b624de9a6f82b42",
-        "name": "",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 340,
-        "y": 100,
-        "wires": []
     },
     {
         "id": "a05399cd9625d9c9",
