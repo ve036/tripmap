@@ -5909,7 +5909,7 @@
                 "tot": "msg"
             },
             {
-                "t": "set",
+                "t": "move",
                 "p": "payload.lon",
                 "pt": "msg",
                 "to": "payload.command.lon",
