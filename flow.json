@@ -2455,7 +2455,7 @@
         "showgrid": "false",
         "allowFileDrop": "false",
         "path": "/worldmap",
-        "x": 1240,
+        "x": 1220,
         "y": 400,
         "wires": []
     },
@@ -2489,7 +2489,8 @@
         "wires": [
             [
                 "a57c0d1dd5651c22",
-                "0254017e5b726446"
+                "0254017e5b726446",
+                "6b106348281e0442"
             ]
         ]
     },
@@ -5877,6 +5878,22 @@
         "statusType": "auto",
         "x": 1130,
         "y": 680,
+        "wires": []
+    },
+    {
+        "id": "6b106348281e0442",
+        "type": "debug",
+        "z": "083b23ab72f662ce",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 920,
+        "y": 240,
         "wires": []
     }
 ]
