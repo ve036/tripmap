@@ -5903,9 +5903,16 @@
         "rules": [
             {
                 "t": "move",
-                "p": "payload",
+                "p": "payload.lat",
                 "pt": "msg",
-                "to": "payload.command",
+                "to": "payload.command.lat",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "payloadlon",
+                "pt": "msg",
+                "to": "payload.command.lon",
                 "tot": "msg"
             }
         ],
@@ -5914,7 +5921,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1330,
+        "x": 1320,
         "y": 140,
         "wires": [
             [
