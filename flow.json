@@ -1900,8 +1900,11 @@
         "func": "msg.payload ={\n    command:{\n        lat: msg.payload.lat,\n        lon: msg.payload.lon,\n        //layer:\"Esri\",\n    }\n}\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
-        "x": 1030,
-        "y": 100,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1190,
+        "y": 260,
         "wires": [
             [
                 "0e8ee917b45db9a1"
@@ -1991,7 +1994,7 @@
             [
                 "221a40c6707080b7",
                 "7e51ac5ac38c98c8",
-                "fe441c0dcab3740b"
+                "90a9853e17438367"
             ]
         ]
     },
@@ -2148,8 +2151,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 1,
-        "x": 1150,
-        "y": 240,
+        "x": 1210,
+        "y": 320,
         "wires": [
             [
                 "0254017e5b726446"
@@ -5478,7 +5481,7 @@
         "seg1": "",
         "seg2": "",
         "x": 2210,
-        "y": 580,
+        "y": 220,
         "wires": []
     },
     {
@@ -5494,7 +5497,7 @@
         "format": "{{msg.payload.kyori}}　km",
         "layout": "row-center",
         "x": 2210,
-        "y": 540,
+        "y": 180,
         "wires": []
     },
     {
@@ -5520,7 +5523,7 @@
         "seg1": "",
         "seg2": "",
         "x": 2210,
-        "y": 500,
+        "y": 140,
         "wires": []
     },
     {
@@ -5536,7 +5539,7 @@
         "format": "{{msg.payload.kyori}}　km",
         "layout": "row-center",
         "x": 2210,
-        "y": 460,
+        "y": 100,
         "wires": []
     },
     {
@@ -5562,7 +5565,7 @@
         "seg1": "",
         "seg2": "",
         "x": 2210,
-        "y": 420,
+        "y": 60,
         "wires": []
     },
     {
@@ -5578,7 +5581,7 @@
         "format": "{{msg.payload.kyori}}　km",
         "layout": "row-center",
         "x": 2210,
-        "y": 380,
+        "y": 20,
         "wires": []
     },
     {
@@ -5592,7 +5595,7 @@
         "initialize": "",
         "finalize": "",
         "x": 1990,
-        "y": 400,
+        "y": 40,
         "wires": [
             [
                 "28417919f2aaa14f",
@@ -5611,7 +5614,7 @@
         "initialize": "",
         "finalize": "",
         "x": 1990,
-        "y": 460,
+        "y": 100,
         "wires": [
             [
                 "39c73a471cc688c4",
@@ -5630,7 +5633,7 @@
         "initialize": "",
         "finalize": "",
         "x": 1990,
-        "y": 520,
+        "y": 160,
         "wires": [
             [
                 "7af60a4e03eb4cc1",
@@ -5666,7 +5669,7 @@
         "repair": false,
         "outputs": 3,
         "x": 1810,
-        "y": 460,
+        "y": 100,
         "wires": [
             [
                 "34ec42057ac2ce78"
@@ -5713,7 +5716,7 @@
         "to": "",
         "reg": false,
         "x": 1640,
-        "y": 540,
+        "y": 180,
         "wires": [
             [
                 "3d81841ed88a5f3e"
@@ -5732,7 +5735,7 @@
         "stream": false,
         "addname": "",
         "x": 1650,
-        "y": 480,
+        "y": 120,
         "wires": [
             [
                 "2ac89dca0d6074c7"
@@ -5780,7 +5783,7 @@
         "to": "",
         "reg": false,
         "x": 1630,
-        "y": 420,
+        "y": 60,
         "wires": [
             [
                 "08049f64bd59e273"
@@ -5803,7 +5806,7 @@
         "randomUnits": "seconds",
         "drop": true,
         "x": 1470,
-        "y": 440,
+        "y": 80,
         "wires": [
             [
                 "bab8924852b7e11e"
@@ -5881,15 +5884,42 @@
         "type": "debug",
         "z": "083b23ab72f662ce",
         "name": "",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1000,
-        "y": 60,
+        "x": 1630,
+        "y": 260,
         "wires": []
+    },
+    {
+        "id": "90a9853e17438367",
+        "type": "change",
+        "z": "083b23ab72f662ce",
+        "name": "",
+        "rules": [
+            {
+                "t": "move",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.command",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1330,
+        "y": 140,
+        "wires": [
+            [
+                "fe441c0dcab3740b"
+            ]
+        ]
     }
 ]
