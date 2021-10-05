@@ -5910,7 +5910,7 @@
             },
             {
                 "t": "set",
-                "p": "payloadlon",
+                "p": "payload.lon",
                 "pt": "msg",
                 "to": "payload.command.lon",
                 "tot": "msg"
