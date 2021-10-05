@@ -975,11 +975,11 @@
         "checkall": "true",
         "repair": false,
         "outputs": 1,
-        "x": 400,
+        "x": 320,
         "y": 140,
         "wires": [
             [
-                "be2710787e25109c"
+                "3c98624f852fd000"
             ]
         ]
     },
@@ -1453,7 +1453,7 @@
         "type": "function",
         "z": "77a4e3ed495f55d2",
         "name": "座標配列",
-        "func": "line=Array(2);\nline[0]=[msg.payload.latx,msg.payload.lony];\nline[1]=[msg.payload.lat,msg.payload.lon];\nmsg.payload={\n    name:i,\n    color:msg.payload.color,\n    weight:\"4\",\n    line:line,\n    layer: \"Tracks\"\n}\ni++;\nreturn msg;",
+        "func": "line=Array(2);\nline[0]=[msg.payload.latx,msg.payload.lony];\nline[1]=[msg.payload.lat,msg.payload.lon];\nmsg.payload={\n    name:i,\n    color:msg.payload.color,\n    weight:\"4\",\n    line:line,\n    layer: msg.payload.layer\n}\ni++;\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "// ここに記述したコードは、ノードをデプロイした時に\n// 一度だけ実行されます。\ni=0;",
@@ -4254,7 +4254,7 @@
         "type": "function",
         "z": "77a4e3ed495f55d2",
         "name": "座標配列",
-        "func": "if(color !=　msg.payload.color){\n   i=0;\n   j++;\n   line=Array();\n}\nif(k > 14400){\n    i=0;\n    J=0;\n    k=0;\n}\ncoordinate=Array(2);\ncoordinate[0]=msg.payload.lat;\ncoordinate[1]=msg.payload.lon;\nline[i]=coordinate;\nmsg.payload={\n    line:line,\n    color:msg.payload.color,\n    weight:4,\n    name:j,\n    layer: \"Tracks\",\n}\ncolor=msg.payload.color;   \ni++;\nk++;\nreturn msg;",
+        "func": "if(color !=　msg.payload.color){\n   i=0;\n   j++;\n   line=Array();\n}\nif(k > 14400){\n    i=0;\n    J=0;\n    k=0;\n}\ncoordinate=Array(2);\ncoordinate[0]=msg.payload.lat;\ncoordinate[1]=msg.payload.lon;\nline[i]=coordinate;\nmsg.payload={\n    line:line,\n    color:msg.payload.color,\n    weight:4,\n    name:j,\n    layer: msg.payload.layer,\n}\ncolor=msg.payload.color;   \ni++;\nk++;\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "// ここに記述したコードは、ノードをデプロイした時に\n// 一度だけ実行されます。\ni=0;\nj=0;\nk=0;\nline=Array();\n\ncolor=\"red\";",
@@ -4571,7 +4571,7 @@
         "initialize": "// ここに記述したコードは、ノードをデプロイした時に\n// 一度だけ実行されます。\nlatx=0;\nlony=0;\ntstd=0;\naltd=0;",
         "finalize": "",
         "libs": [],
-        "x": 200,
+        "x": 180,
         "y": 140,
         "wires": [
             [
@@ -4591,8 +4591,8 @@
         "septopics": true,
         "property": "payload",
         "topi": "topic",
-        "x": 590,
-        "y": 140,
+        "x": 670,
+        "y": 80,
         "wires": [
             [
                 "1d88c140133f9e3a"
@@ -4833,7 +4833,7 @@
         "id": "dd4cae62d6103f25",
         "type": "subflow:77a4e3ed495f55d2",
         "z": "006e761ebec3950a",
-        "x": 880,
+        "x": 870,
         "y": 760,
         "wires": [
             [
@@ -5872,6 +5872,33 @@
         "wires": [
             [
                 "1e48520eee149a01"
+            ]
+        ]
+    },
+    {
+        "id": "3c98624f852fd000",
+        "type": "change",
+        "z": "77a4e3ed495f55d2",
+        "name": "",
+        "rules": [
+            {
+                "t": "move",
+                "p": "payload.name",
+                "pt": "msg",
+                "to": "payload.layer",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 510,
+        "y": 140,
+        "wires": [
+            [
+                "be2710787e25109c"
             ]
         ]
     }
