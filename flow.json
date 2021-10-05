@@ -1792,7 +1792,7 @@
         "type": "debug",
         "z": "083b23ab72f662ce",
         "name": "",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -5907,6 +5907,13 @@
                 "pt": "msg",
                 "to": "payload.command.lat",
                 "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.command.lon",
+                "tot": "msg"
             }
         ],
         "action": "",
@@ -5914,7 +5921,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1340,
+        "x": 1320,
         "y": 140,
         "wires": [
             [
