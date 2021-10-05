@@ -57,7 +57,7 @@
             },
             {
                 "x": 1300,
-                "y": 220,
+                "y": 300,
                 "wires": [
                     {
                         "id": "d1d97e2ddef50ecd",
@@ -2359,7 +2359,8 @@
                 "fea94b7d3bddc361",
                 "2b5ecaf48353e3a6",
                 "a78e4acdbfa8e720",
-                "90b8de7ecf37254f"
+                "90b8de7ecf37254f",
+                "7183509022fcf74e"
             ]
         ]
     },
@@ -4251,7 +4252,7 @@
         "type": "function",
         "z": "77a4e3ed495f55d2",
         "name": "座標配列",
-        "func": "if(color !=　msg.payload.color){\n   i=0;\n   j++;\n   line=Array();\n}\nif(k > 14400){\n    i=0;\n    J=0;\n    k=0;\n}\ncoordinate=Array(2);\ncoordinate[0]=msg.payload.lat;\ncoordinate[1]=msg.payload.lon;\nline[i]=coordinate;\nmsg.payload={\n    line:line,\n    color:msg.payload.color,\n    weight:4,\n    name:j,\n    layer: msg.payload.layer,\n}\ncolor=msg.payload.color;   \ni++;\nk++;\nreturn msg;",
+        "func": "if(color !=　msg.payload.color){\n   i=0;\n   j++;\n   line=Array();\n}\nif(k > 14400){\n    i=0;\n    J=0;\n    k=0;\n}\ncoordinate=Array(2);\ncoordinate[0]=msg.payload.lat;\ncoordinate[1]=msg.payload.lon;\nline[i]=coordinate;\nmsg.payload={\n    line:line,\n    color:msg.payload.color,\n    weight:4,\n    name:\"line\"+j,\n    layer: msg.payload.layer,\n}\ncolor=msg.payload.color;   \ni++;\nk++;\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "// ここに記述したコードは、ノードをデプロイした時に\n// 一度だけ実行されます。\ni=0;\nj=0;\nk=0;\nline=Array();\n\ncolor=\"red\";",
@@ -4839,7 +4840,8 @@
                 "571b3414a69f344d"
             ],
             [
-                "33fbd98ac66d1d46"
+                "2bb8ea3338364a82",
+                "a2eddb190dd00f06"
             ]
         ]
     },
@@ -4874,7 +4876,7 @@
         "type": "subflow:77a4e3ed495f55d2",
         "z": "aeb7525ab85c57cf",
         "name": "",
-        "x": 900,
+        "x": 920,
         "y": 700,
         "wires": [
             [
@@ -5893,6 +5895,84 @@
         "statusType": "auto",
         "x": 1110,
         "y": 20,
+        "wires": []
+    },
+    {
+        "id": "7183509022fcf74e",
+        "type": "change",
+        "z": "083b23ab72f662ce",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "tracks1",
+                "tot": "global"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 780,
+        "y": 540,
+        "wires": [
+            [
+                "0254017e5b726446"
+            ]
+        ]
+    },
+    {
+        "id": "2bb8ea3338364a82",
+        "type": "function",
+        "z": "006e761ebec3950a",
+        "name": "配列格納",
+        "func": "if(color !=　msg.payload.color){\n   i++;\n}\ncolor=msg.payload.color;\npayload[i]=msg.payload;\nmsg.payload=payload;\n\nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "// ここに記述したコードは、ノードをデプロイした時に\n// 一度だけ実行されます。\npayload=Array();\ni=0;\nj=0;\ntracks=Array();\ncolor=\"red\";",
+        "finalize": "",
+        "libs": [],
+        "x": 1080,
+        "y": 880,
+        "wires": [
+            [
+                "33fbd98ac66d1d46"
+            ]
+        ]
+    },
+    {
+        "id": "a2eddb190dd00f06",
+        "type": "debug",
+        "z": "006e761ebec3950a",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1070,
+        "y": 940,
+        "wires": []
+    },
+    {
+        "id": "ec37df91c93d7984",
+        "type": "debug",
+        "z": "006e761ebec3950a",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1310,
+        "y": 900,
         "wires": []
     }
 ]
