@@ -5902,10 +5902,10 @@
         "name": "",
         "rules": [
             {
-                "t": "set",
-                "p": "payload.command.lat",
+                "t": "move",
+                "p": "payload.lat",
                 "pt": "msg",
-                "to": "payload.lat",
+                "to": "payload.command.lat",
                 "tot": "msg"
             }
         ],
@@ -5914,7 +5914,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1370,
+        "x": 1340,
         "y": 140,
         "wires": [
             [
