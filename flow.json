@@ -28,9 +28,9 @@
         "info": ""
     },
     {
-        "id": "77a4e3ed495f55d2",
+        "id": "7adb20e994873399",
         "type": "subflow",
-        "name": "LINE作成",
+        "name": "LINE作成 ",
         "info": "",
         "category": "",
         "in": [
@@ -39,7 +39,7 @@
                 "y": 140,
                 "wires": [
                     {
-                        "id": "a9a3efb8c46edf37"
+                        "id": "644d18d9981a2f19"
                     }
                 ]
             }
@@ -47,20 +47,20 @@
         "out": [
             {
                 "x": 1300,
-                "y": 80,
+                "y": 140,
                 "wires": [
                     {
-                        "id": "a8e249447ba3f3ec",
+                        "id": "564c5f0228438425",
                         "port": 0
                     }
                 ]
             },
             {
                 "x": 1300,
-                "y": 300,
+                "y": 220,
                 "wires": [
                     {
-                        "id": "d1d97e2ddef50ecd",
+                        "id": "e33cebfd0265ad86",
                         "port": 0
                     }
                 ]
@@ -157,7 +157,7 @@
         "type": "ui_tab",
         "name": "1移動GPS",
         "icon": "dashboard",
-        "order": 1,
+        "order": 2,
         "disabled": false,
         "hidden": false
     },
@@ -166,7 +166,7 @@
         "type": "ui_tab",
         "name": "地図",
         "icon": "dashboard",
-        "order": 5,
+        "order": 1,
         "disabled": false,
         "hidden": false
     },
@@ -175,7 +175,7 @@
         "type": "ui_tab",
         "name": "GPS DATA",
         "icon": "dashboard",
-        "order": 7,
+        "order": 5,
         "disabled": false,
         "hidden": false
     },
@@ -362,7 +362,7 @@
         "type": "ui_tab",
         "name": "3移動GPS",
         "icon": "dashboard",
-        "order": 2,
+        "order": 3,
         "disabled": false,
         "hidden": false
     },
@@ -554,20 +554,11 @@
         "id": "ee74ce02a36b648c",
         "type": "ui_group",
         "name": "方角距離",
-        "tab": "08175001f9b99605",
+        "tab": "",
         "order": 1,
         "disp": false,
         "width": "7",
         "collapse": false
-    },
-    {
-        "id": "08175001f9b99605",
-        "type": "ui_tab",
-        "name": "受信点",
-        "icon": "dashboard",
-        "order": 2,
-        "disabled": false,
-        "hidden": false
     },
     {
         "id": "230b3c921bbf4313",
@@ -713,7 +704,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 330,
-        "y": 500,
+        "y": 400,
         "wires": []
     },
     {
@@ -730,8 +721,8 @@
         "fwdInMessages": true,
         "resendOnRefresh": true,
         "templateScope": "local",
-        "x": 350,
-        "y": 880,
+        "x": 750,
+        "y": 820,
         "wires": [
             []
         ]
@@ -747,7 +738,7 @@
         "syntax": "mustache",
         "template": "時速 : {{payload.kmh}} km",
         "output": "str",
-        "x": 340,
+        "x": 520,
         "y": 820,
         "wires": [
             [
@@ -803,7 +794,8 @@
                 "ce6f4b8bbd89b451",
                 "979668403c9c1bb5",
                 "c1796f3c6d3f6050",
-                "1c742859a794912e"
+                "1c742859a794912e",
+                "4d97a6522904cd49"
             ]
         ]
     },
@@ -858,8 +850,8 @@
         "onceDelay": 0.1,
         "topic": "",
         "payloadType": "str",
-        "x": 670,
-        "y": 500,
+        "x": 850,
+        "y": 420,
         "wires": [
             [
                 "bad4989420b6dbb8"
@@ -878,7 +870,7 @@
         "finalize": "",
         "libs": [],
         "x": 870,
-        "y": 500,
+        "y": 480,
         "wires": [
             [
                 "c1796f3c6d3f6050"
@@ -949,31 +941,6 @@
         "y": 940,
         "wires": [
             []
-        ]
-    },
-    {
-        "id": "db257d8663dc5887",
-        "type": "switch",
-        "z": "77a4e3ed495f55d2",
-        "name": "latx not 0",
-        "property": "payload.latx",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "neq",
-                "v": "0",
-                "vt": "num"
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 1,
-        "x": 320,
-        "y": 140,
-        "wires": [
-            [
-                "3c98624f852fd000"
-            ]
         ]
     },
     {
@@ -1174,11 +1141,12 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 330,
-        "y": 640,
+        "x": 310,
+        "y": 760,
         "wires": [
             [
-                "9cb2b099d884dc41"
+                "9cb2b099d884dc41",
+                "c7898d5fa8d47f82"
             ]
         ]
     },
@@ -1296,238 +1264,6 @@
         ]
     },
     {
-        "id": "1d88c140133f9e3a",
-        "type": "switch",
-        "z": "77a4e3ed495f55d2",
-        "name": "acc",
-        "property": "payload.acc",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "lt",
-                "v": "10",
-                "vt": "num"
-            },
-            {
-                "t": "lte",
-                "v": "20",
-                "vt": "num"
-            },
-            {
-                "t": "gt",
-                "v": "20",
-                "vt": "num"
-            }
-        ],
-        "checkall": "false",
-        "repair": false,
-        "outputs": 3,
-        "x": 750,
-        "y": 140,
-        "wires": [
-            [
-                "90829fa577632119"
-            ],
-            [
-                "a4f8e6e5f3bcf7ab"
-            ],
-            [
-                "b352ce50f2f54dcd"
-            ]
-        ]
-    },
-    {
-        "id": "90829fa577632119",
-        "type": "change",
-        "z": "77a4e3ed495f55d2",
-        "name": "acc10",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload.color",
-                "pt": "msg",
-                "to": "lime",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "payload.name",
-                "pt": "msg",
-                "to": "acc10",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 930,
-        "y": 140,
-        "wires": [
-            [
-                "cac2576a1670c74a",
-                "d1d97e2ddef50ecd"
-            ]
-        ]
-    },
-    {
-        "id": "a4f8e6e5f3bcf7ab",
-        "type": "change",
-        "z": "77a4e3ed495f55d2",
-        "name": "acc20",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload.color",
-                "pt": "msg",
-                "to": "#FFCC00",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "payload.name",
-                "pt": "msg",
-                "to": "acc20",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 930,
-        "y": 180,
-        "wires": [
-            [
-                "cac2576a1670c74a",
-                "d1d97e2ddef50ecd"
-            ]
-        ]
-    },
-    {
-        "id": "b352ce50f2f54dcd",
-        "type": "change",
-        "z": "77a4e3ed495f55d2",
-        "name": "accbad",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload.color",
-                "pt": "msg",
-                "to": "red",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "payload.name",
-                "pt": "msg",
-                "to": "accbad",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 940,
-        "y": 220,
-        "wires": [
-            [
-                "cac2576a1670c74a",
-                "d1d97e2ddef50ecd"
-            ]
-        ]
-    },
-    {
-        "id": "cac2576a1670c74a",
-        "type": "function",
-        "z": "77a4e3ed495f55d2",
-        "name": "座標配列",
-        "func": "line=Array(2);\nline[0]=[msg.payload.latx,msg.payload.lony];\nline[1]=[msg.payload.lat,msg.payload.lon];\nmsg.payload={\n    name:i,\n    color:msg.payload.color,\n    weight:\"4\",\n    line:line,\n    layer: msg.payload.layer\n}\ni++;\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "// ここに記述したコードは、ノードをデプロイした時に\n// 一度だけ実行されます。\ni=0;",
-        "finalize": "",
-        "libs": [],
-        "x": 1140,
-        "y": 140,
-        "wires": [
-            [
-                "a8e249447ba3f3ec"
-            ]
-        ]
-    },
-    {
-        "id": "a8e249447ba3f3ec",
-        "type": "function",
-        "z": "77a4e3ed495f55d2",
-        "name": "2点間線配列",
-        "func": "if(i > 2000){\n    //tracks[j]=payload;\n    //global.set(\"tracks\",tracks)\n    i=0;\n    //j++;\n}\npayload[i]=msg.payload;\ni++;\nmsg.payload=payload;\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "// ここに記述したコードは、ノードをデプロイした時に\n// 一度だけ実行されます。\npayload=Array();\ni=0;\nj=0;\ntracks=Array();",
-        "finalize": "",
-        "libs": [],
-        "x": 1150,
-        "y": 80,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "f95684cf800eed83",
-        "type": "change",
-        "z": "006e761ebec3950a",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "line1",
-                "pt": "global",
-                "to": "payload",
-                "tot": "msg"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 1740,
-        "y": 660,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "bc15a169b7b6e88e",
-        "type": "change",
-        "z": "006e761ebec3950a",
-        "name": "global.line1",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "line1",
-                "tot": "global"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 1150,
-        "y": 1020,
-        "wires": [
-            []
-        ]
-    },
-    {
         "id": "9681564cba1792f1",
         "type": "worldmap in",
         "z": "006e761ebec3950a",
@@ -1541,7 +1277,6 @@
                 "c4cc3a6d06cb196b",
                 "7b9ed0b1780f1b25",
                 "914ebf6619be35dc",
-                "0eebd9eab94c505e",
                 "e69305dd852faaf9"
             ]
         ]
@@ -1682,12 +1417,13 @@
         "id": "ce6f4b8bbd89b451",
         "type": "link out",
         "z": "006e761ebec3950a",
-        "name": "",
+        "name": "1移動",
         "links": [
-            "ddab066c.9d8188"
+            "5bc8b1cd9e2e17d8",
+            "a9dd9c08d420fbc1"
         ],
         "x": 275,
-        "y": 440,
+        "y": 460,
         "wires": []
     },
     {
@@ -1730,33 +1466,6 @@
         ]
     },
     {
-        "id": "48c556904f5d8c7f",
-        "type": "inject",
-        "z": "083b23ab72f662ce",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "1",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 130,
-        "y": 780,
-        "wires": [
-            []
-        ]
-    },
-    {
         "id": "39ce8c7c29bed32f",
         "type": "ui_text",
         "z": "083b23ab72f662ce",
@@ -1768,8 +1477,8 @@
         "label": "サーバー時間",
         "format": "{{msg.payload}}",
         "layout": "row-spread",
-        "x": 1100,
-        "y": 780,
+        "x": 600,
+        "y": 700,
         "wires": []
     },
     {
@@ -1818,7 +1527,7 @@
         "zoom": "16",
         "layer": "OSM",
         "cluster": "",
-        "maxage": "",
+        "maxage": "3600",
         "usermenu": "hide",
         "layers": "show",
         "panit": "false",
@@ -1828,69 +1537,9 @@
         "coords": "deg",
         "showgrid": "false",
         "path": "/worldmap",
-        "x": 1380,
-        "y": 300,
+        "x": 1220,
+        "y": 460,
         "wires": []
-    },
-    {
-        "id": "fa52a88f55343732",
-        "type": "change",
-        "z": "083b23ab72f662ce",
-        "name": "global1移動",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload.lat",
-                "pt": "msg",
-                "to": "lat1",
-                "tot": "global"
-            },
-            {
-                "t": "set",
-                "p": "payload.lon",
-                "pt": "msg",
-                "to": "lon1",
-                "tot": "global"
-            },
-            {
-                "t": "set",
-                "p": "payload.name",
-                "pt": "msg",
-                "to": "name1",
-                "tot": "global"
-            },
-            {
-                "t": "set",
-                "p": "payload.bearing",
-                "pt": "msg",
-                "to": "bearing1",
-                "tot": "global"
-            },
-            {
-                "t": "set",
-                "p": "payload.iconColor",
-                "pt": "msg",
-                "to": "blue",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "payload.icon",
-                "pt": "msg",
-                "to": "arrow",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 250,
-        "y": 220,
-        "wires": [
-            []
-        ]
     },
     {
         "id": "221a40c6707080b7",
@@ -1909,66 +1558,6 @@
             [
                 "0e8ee917b45db9a1"
             ]
-        ]
-    },
-    {
-        "id": "e253ec7d6593118d",
-        "type": "change",
-        "z": "083b23ab72f662ce",
-        "name": "global3移動",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload.lat",
-                "pt": "msg",
-                "to": "lat3",
-                "tot": "global"
-            },
-            {
-                "t": "set",
-                "p": "payload.lon",
-                "pt": "msg",
-                "to": "lon3",
-                "tot": "global"
-            },
-            {
-                "t": "set",
-                "p": "payload.name",
-                "pt": "msg",
-                "to": "name3",
-                "tot": "global"
-            },
-            {
-                "t": "set",
-                "p": "payload.bearing",
-                "pt": "msg",
-                "to": "bearing3",
-                "tot": "global"
-            },
-            {
-                "t": "set",
-                "p": "payload.iconColor",
-                "pt": "msg",
-                "to": "green",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "payload.icon",
-                "pt": "msg",
-                "to": "arrow",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 250,
-        "y": 260,
-        "wires": [
-            []
         ]
     },
     {
@@ -2091,52 +1680,6 @@
         ]
     },
     {
-        "id": "7e494876d7883467",
-        "type": "switch",
-        "z": "083b23ab72f662ce",
-        "name": "",
-        "property": "select",
-        "propertyType": "flow",
-        "rules": [
-            {
-                "t": "eq",
-                "v": "1",
-                "vt": "num"
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 1,
-        "x": 430,
-        "y": 80,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "58903729f76b7e06",
-        "type": "switch",
-        "z": "083b23ab72f662ce",
-        "name": "",
-        "property": "select",
-        "propertyType": "flow",
-        "rules": [
-            {
-                "t": "eq",
-                "v": "3",
-                "vt": "num"
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 1,
-        "x": 430,
-        "y": 140,
-        "wires": [
-            []
-        ]
-    },
-    {
         "id": "0e8ee917b45db9a1",
         "type": "switch",
         "z": "083b23ab72f662ce",
@@ -2223,7 +1766,9 @@
         "topic": "owntracks/nodered/aquos/dump",
         "qos": "2",
         "datatype": "auto",
-        "broker": "ac7569b4.5ada88",
+        "broker": "58bd0fd66116561d",
+        "nl": false,
+        "rap": false,
         "x": 210,
         "y": 1140,
         "wires": [
@@ -2268,7 +1813,7 @@
         "id": "2b5ecaf48353e3a6",
         "type": "change",
         "z": "083b23ab72f662ce",
-        "name": "",
+        "name": "reset",
         "rules": [
             {
                 "t": "set",
@@ -2283,8 +1828,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 780,
-        "y": 480,
+        "x": 750,
+        "y": 500,
         "wires": [
             [
                 "0254017e5b726446"
@@ -2295,7 +1840,7 @@
         "id": "fea94b7d3bddc361",
         "type": "change",
         "z": "083b23ab72f662ce",
-        "name": "",
+        "name": "base",
         "rules": [
             {
                 "t": "set",
@@ -2310,38 +1855,11 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 780,
-        "y": 420,
+        "x": 750,
+        "y": 460,
         "wires": [
             [
                 "0254017e5b726446"
-            ]
-        ]
-    },
-    {
-        "id": "3578a445d3fbd684",
-        "type": "change",
-        "z": "083b23ab72f662ce",
-        "name": "global.line3",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "line3",
-                "tot": "global"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 270,
-        "y": 140,
-        "wires": [
-            [
-                "58903729f76b7e06"
             ]
         ]
     },
@@ -2359,35 +1877,7 @@
                 "fea94b7d3bddc361",
                 "2b5ecaf48353e3a6",
                 "a78e4acdbfa8e720",
-                "90b8de7ecf37254f",
-                "7183509022fcf74e"
-            ]
-        ]
-    },
-    {
-        "id": "77fca4302bfbe3a3",
-        "type": "change",
-        "z": "083b23ab72f662ce",
-        "name": "global.line1",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "line1",
-                "tot": "global"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 270,
-        "y": 80,
-        "wires": [
-            [
-                "7e494876d7883467"
+                "90b8de7ecf37254f"
             ]
         ]
     },
@@ -2402,8 +1892,8 @@
         "timer": "",
         "oldrc": false,
         "name": "",
-        "x": 390,
-        "y": 1360,
+        "x": 340,
+        "y": 1060,
         "wires": [
             [],
             [],
@@ -2431,8 +1921,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 180,
-        "y": 1360,
+        "x": 130,
+        "y": 1060,
         "wires": [
             [
                 "b94f01f596ed757c"
@@ -2449,7 +1939,7 @@
         "zoom": "",
         "layer": "",
         "cluster": "",
-        "maxage": "",
+        "maxage": "3600",
         "usermenu": "hide",
         "layers": "show",
         "panit": "false",
@@ -2475,9 +1965,11 @@
         "initialize": "",
         "finalize": "",
         "x": 770,
-        "y": 380,
+        "y": 420,
         "wires": [
-            []
+            [
+                "0254017e5b726446"
+            ]
         ]
     },
     {
@@ -2488,12 +1980,11 @@
         "links": [
             "ce6f4b8bbd89b451"
         ],
-        "x": 675,
-        "y": 220,
+        "x": 695,
+        "y": 100,
         "wires": [
             [
-                "a57c0d1dd5651c22",
-                "0254017e5b726446"
+                "a57c0d1dd5651c22"
             ]
         ]
     },
@@ -3089,7 +2580,7 @@
         "template": "時速 : {{payload.kmh}} km",
         "output": "str",
         "x": 740,
-        "y": 640,
+        "y": 580,
         "wires": [
             [
                 "d944c7abaf298366"
@@ -3110,8 +2601,8 @@
         "fwdInMessages": true,
         "resendOnRefresh": true,
         "templateScope": "local",
-        "x": 1050,
-        "y": 640,
+        "x": 910,
+        "y": 580,
         "wires": [
             []
         ]
@@ -3138,8 +2629,8 @@
         ],
         "seg1": "",
         "seg2": "",
-        "x": 540,
-        "y": 580,
+        "x": 500,
+        "y": 420,
         "wires": []
     },
     {
@@ -3155,8 +2646,8 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 710,
-        "y": 460,
+        "x": 510,
+        "y": 300,
         "wires": []
     },
     {
@@ -3183,30 +2674,9 @@
         "coords": "deg",
         "showgrid": "true",
         "path": "/worldmap3",
-        "x": 1750,
-        "y": 520,
+        "x": 1590,
+        "y": 360,
         "wires": []
-    },
-    {
-        "id": "2d3aaed64d3a5a5c",
-        "type": "switch",
-        "z": "aeb7525ab85c57cf",
-        "name": "dis not null",
-        "property": "payload.dis",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "nnull"
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 1,
-        "x": 1130,
-        "y": 560,
-        "wires": [
-            []
-        ]
     },
     {
         "id": "5a93da1b47bdd0b8",
@@ -3263,7 +2733,7 @@
         "to": "",
         "reg": false,
         "x": 750,
-        "y": 600,
+        "y": 520,
         "wires": [
             []
         ]
@@ -3394,217 +2864,9 @@
                 "5a93da1b47bdd0b8",
                 "f23a3aa8e506eb2f",
                 "5d9d665f0ce2fc06",
-                "6431d7f126204980"
+                "6431d7f126204980",
+                "5e316521ba7d022c"
             ]
-        ]
-    },
-    {
-        "id": "bcbcf3de15f6632a",
-        "type": "switch",
-        "z": "aeb7525ab85c57cf",
-        "name": "acc",
-        "property": "payload.acc",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "lt",
-                "v": "10",
-                "vt": "num"
-            },
-            {
-                "t": "lte",
-                "v": "20",
-                "vt": "num"
-            },
-            {
-                "t": "gt",
-                "v": "20",
-                "vt": "num"
-            }
-        ],
-        "checkall": "false",
-        "repair": false,
-        "outputs": 3,
-        "x": 1850,
-        "y": 640,
-        "wires": [
-            [
-                "15c32a98fe8b4248"
-            ],
-            [
-                "44bf0bac51f566c3"
-            ],
-            [
-                "d1d9cef1b4accba9"
-            ]
-        ]
-    },
-    {
-        "id": "15c32a98fe8b4248",
-        "type": "change",
-        "z": "aeb7525ab85c57cf",
-        "name": "acc10",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload.color",
-                "pt": "msg",
-                "to": "lime",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "payload.name",
-                "pt": "msg",
-                "to": "acc10",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 2010,
-        "y": 620,
-        "wires": [
-            [
-                "f0f914d94e394e3a",
-                "e65e0a9a7ce640ef"
-            ]
-        ]
-    },
-    {
-        "id": "44bf0bac51f566c3",
-        "type": "change",
-        "z": "aeb7525ab85c57cf",
-        "name": "acc20",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload.color",
-                "pt": "msg",
-                "to": "#FFCC00",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "payload.name",
-                "pt": "msg",
-                "to": "acc20",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 2010,
-        "y": 660,
-        "wires": [
-            [
-                "f0f914d94e394e3a",
-                "e65e0a9a7ce640ef"
-            ]
-        ]
-    },
-    {
-        "id": "d1d9cef1b4accba9",
-        "type": "change",
-        "z": "aeb7525ab85c57cf",
-        "name": "accbad",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload.color",
-                "pt": "msg",
-                "to": "red",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "payload.name",
-                "pt": "msg",
-                "to": "accbad",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 2020,
-        "y": 700,
-        "wires": [
-            [
-                "f0f914d94e394e3a",
-                "e65e0a9a7ce640ef"
-            ]
-        ]
-    },
-    {
-        "id": "f0f914d94e394e3a",
-        "type": "function",
-        "z": "aeb7525ab85c57cf",
-        "name": "座標配列",
-        "func": "line=Array(2);\nline[0]=[msg.payload.latx,msg.payload.lony];\nline[1]=[msg.payload.lat,msg.payload.lon];\nmsg.payload={\n    name:i,\n    color:msg.payload.color,\n    weight:\"5\",\n    line:line,\n}\ni++;\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "// ここに記述したコードは、ノードをデプロイした時に\n// 一度だけ実行されます。\ni=0;",
-        "finalize": "",
-        "x": 2280,
-        "y": 620,
-        "wires": [
-            [
-                "f880eedf21c9cf08",
-                "1314272ff3644dfd"
-            ]
-        ]
-    },
-    {
-        "id": "f880eedf21c9cf08",
-        "type": "function",
-        "z": "aeb7525ab85c57cf",
-        "name": "ペイロード配列",
-        "func": "if(i > 2000){\n    i=0;\n}\npayload[i]=msg.payload;\ni++;\nmsg.payload=payload;\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "// ここに記述したコードは、ノードをデプロイした時に\n// 一度だけ実行されます。\npayload=Array();\ni=0;",
-        "finalize": "",
-        "libs": [],
-        "x": 2500,
-        "y": 620,
-        "wires": [
-            [
-                "e631301dcf84ae51"
-            ]
-        ]
-    },
-    {
-        "id": "e631301dcf84ae51",
-        "type": "change",
-        "z": "aeb7525ab85c57cf",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "line3",
-                "pt": "global",
-                "to": "payload",
-                "tot": "msg"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 2340,
-        "y": 580,
-        "wires": [
-            []
         ]
     },
     {
@@ -3661,8 +2923,8 @@
         "noerr": 0,
         "initialize": "",
         "finalize": "",
-        "x": 550,
-        "y": 320,
+        "x": 110,
+        "y": 680,
         "wires": [
             []
         ]
@@ -3795,8 +3057,8 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
-        "x": 1530,
-        "y": 360,
+        "x": 1390,
+        "y": 300,
         "wires": [
             [
                 "b0419865a28d5239"
@@ -3814,8 +3076,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1690,
-        "y": 360,
+        "x": 1570,
+        "y": 300,
         "wires": [
             [
                 "65a264793457c4fe"
@@ -3837,31 +3099,6 @@
         "x": 390,
         "y": 140,
         "wires": []
-    },
-    {
-        "id": "ab88ba5ee9f197a9",
-        "type": "change",
-        "z": "aeb7525ab85c57cf",
-        "name": "global.line3",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "line3",
-                "tot": "global"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 1850,
-        "y": 320,
-        "wires": [
-            []
-        ]
     },
     {
         "id": "b557da5c13aa72a0",
@@ -3893,8 +3130,8 @@
         "name": "",
         "path": "/worldmap3",
         "events": "connect",
-        "x": 1160,
-        "y": 480,
+        "x": 1080,
+        "y": 520,
         "wires": [
             [
                 "75ecac7ea7b23735",
@@ -3923,8 +3160,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1330,
-        "y": 440,
+        "x": 1250,
+        "y": 540,
         "wires": [
             [
                 "65a264793457c4fe"
@@ -3950,63 +3187,13 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1330,
-        "y": 480,
+        "x": 1250,
+        "y": 580,
         "wires": [
             [
                 "65a264793457c4fe"
             ]
         ]
-    },
-    {
-        "id": "7ac2f764d44ee770",
-        "type": "function",
-        "z": "aeb7525ab85c57cf",
-        "name": "delay測定",
-        "func": "date = new Date();\ndelay=date-msg.payload.tst*1000;\nglobal.set(\"delay3\",delay);\nmsg.payload=global.get(\"delay1\")-delay;\n//msg.payload=Date.now(date);\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "x": 440,
-        "y": 60,
-        "wires": [
-            [
-                "e7ef3714e2d6611e"
-            ]
-        ]
-    },
-    {
-        "id": "e7ef3714e2d6611e",
-        "type": "debug",
-        "z": "aeb7525ab85c57cf",
-        "name": "",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 630,
-        "y": 60,
-        "wires": []
-    },
-    {
-        "id": "1314272ff3644dfd",
-        "type": "debug",
-        "z": "aeb7525ab85c57cf",
-        "name": "",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 2450,
-        "y": 700,
-        "wires": []
     },
     {
         "id": "13fe7f37933cf2b2",
@@ -4025,32 +3212,16 @@
         ]
     },
     {
-        "id": "e39cebaf7717c7ce",
-        "type": "debug",
-        "z": "aeb7525ab85c57cf",
-        "name": "",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 930,
-        "y": 780,
-        "wires": []
-    },
-    {
         "id": "49005e76c77f4e29",
         "type": "link out",
         "z": "aeb7525ab85c57cf",
-        "name": "",
+        "name": "3移動",
         "links": [
-            "014ffb2a751240fb",
+            "5bc8b1cd9e2e17d8",
             "619016e55ac7e0ca"
         ],
         "x": 695,
-        "y": 560,
+        "y": 460,
         "wires": []
     },
     {
@@ -4104,7 +3275,7 @@
         "label": "総距離",
         "format": "{{msg.payload.oddt}}",
         "layout": "row-spread",
-        "x": 1490,
+        "x": 1450,
         "y": 920,
         "wires": []
     },
@@ -4119,8 +3290,8 @@
         "syntax": "mustache",
         "template": "{{payload.genku}}/{{payload.zenku}}区　3移動距離:{{payload.odd}}m/{{payload.kukyori}}m",
         "output": "str",
-        "x": 1470,
-        "y": 1020,
+        "x": 1450,
+        "y": 980,
         "wires": [
             [
                 "87e489df45b215d0",
@@ -4212,13 +3383,14 @@
         "z": "006e761ebec3950a",
         "name": "",
         "depth": "8000",
-        "layer": "combined",
+        "layer": "single",
         "smooth": false,
-        "x": 710,
-        "y": 1000,
+        "x": 530,
+        "y": 500,
         "wires": [
             [
-                "4d97a6522904cd49"
+                "c1796f3c6d3f6050",
+                "961903cfc3f74408"
             ]
         ]
     },
@@ -4232,7 +3404,7 @@
                 "t": "set",
                 "p": "payload.color",
                 "pt": "msg",
-                "to": "lime",
+                "to": "blue",
                 "tot": "str"
             }
         ],
@@ -4241,158 +3413,12 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 940,
-        "y": 1000,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "d1d97e2ddef50ecd",
-        "type": "function",
-        "z": "77a4e3ed495f55d2",
-        "name": "座標配列",
-        "func": "if(color !=　msg.payload.color){\n   i=0;\n   j++;\n   line=Array();\n}\nif(k > 14400){\n    i=0;\n    J=0;\n    k=0;\n}\ncoordinate=Array(2);\ncoordinate[0]=msg.payload.lat;\ncoordinate[1]=msg.payload.lon;\nline[i]=coordinate;\nmsg.payload={\n    line:line,\n    color:msg.payload.color,\n    weight:4,\n    name:\"line\"+j,\n    layer: msg.payload.layer,\n}\ncolor=msg.payload.color;   \ni++;\nk++;\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "// ここに記述したコードは、ノードをデプロイした時に\n// 一度だけ実行されます。\ni=0;\nj=0;\nk=0;\nline=Array();\n\ncolor=\"red\";",
-        "finalize": "",
-        "libs": [],
-        "x": 1140,
-        "y": 220,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "33fbd98ac66d1d46",
-        "type": "change",
-        "z": "006e761ebec3950a",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "tracks",
-                "pt": "global",
-                "to": "payload",
-                "tot": "msg"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 1120,
-        "y": 780,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "0eebd9eab94c505e",
-        "type": "change",
-        "z": "006e761ebec3950a",
-        "name": "tracks",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "tracks",
-                "tot": "global"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 870,
-        "y": 580,
+        "x": 340,
+        "y": 500,
         "wires": [
             [
-                "c1796f3c6d3f6050"
+                "e50ce16ce0fa8a66"
             ]
-        ]
-    },
-    {
-        "id": "b94ab58c45e07fa9",
-        "type": "debug",
-        "z": "aeb7525ab85c57cf",
-        "name": "",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 2330,
-        "y": 800,
-        "wires": []
-    },
-    {
-        "id": "e65e0a9a7ce640ef",
-        "type": "function",
-        "z": "aeb7525ab85c57cf",
-        "name": "座標配列",
-        "func": "if(color !=　msg.payload.color){\n   i=0;\n   j++;\n   line=Array();\n}\nif(k > 43200){\n    i=0;\n    J=0;\n    k=0;\n}\ncoordinate=Array(2);\ncoordinate[0]=msg.payload.lat;\ncoordinate[1]=msg.payload.lon;\nline[i]=coordinate;\nmsg.payload={\n    line:line,\n    color:msg.payload.color,\n    weight:4,\n    name:j\n}\ncolor=msg.payload.color;   \ni++;\nk++;\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "// ここに記述したコードは、ノードをデプロイした時に\n// 一度だけ実行されます。\ni=0;\nj=0;\nk=0;\nline=Array();\n\ncolor=\"red\";",
-        "finalize": "",
-        "libs": [],
-        "x": 2220,
-        "y": 840,
-        "wires": [
-            [
-                "0a2e219e8f63705b"
-            ]
-        ]
-    },
-    {
-        "id": "0a2e219e8f63705b",
-        "type": "function",
-        "z": "aeb7525ab85c57cf",
-        "name": "ペイロード配列",
-        "func": "\nif(color != msg.payload.color){\n    i++;\n}\ncolor=msg.payload.color;\npayload[i]=msg.payload;\nmsg.payload=payload;\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "// ここに記述したコードは、ノードをデプロイした時に\n// 一度だけ実行されます。\npayload=Array();\ni=0;\ncolor=\"red\";",
-        "finalize": "",
-        "libs": [],
-        "x": 2420,
-        "y": 840,
-        "wires": [
-            [
-                "b94ab58c45e07fa9"
-            ]
-        ]
-    },
-    {
-        "id": "ccc342630a35cdb4",
-        "type": "change",
-        "z": "aeb7525ab85c57cf",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "tracks3",
-                "pt": "global",
-                "to": "payload",
-                "tot": "msg"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 1170,
-        "y": 720,
-        "wires": [
-            []
         ]
     },
     {
@@ -4414,8 +3440,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1330,
-        "y": 400,
+        "x": 1250,
+        "y": 500,
         "wires": [
             [
                 "65a264793457c4fe"
@@ -4549,51 +3575,11 @@
         "randomUnits": "seconds",
         "drop": true,
         "allowrate": false,
-        "x": 330,
-        "y": 760,
+        "x": 310,
+        "y": 820,
         "wires": [
             [
-                "ab576d8c6c99af0a",
-                "c7898d5fa8d47f82"
-            ]
-        ]
-    },
-    {
-        "id": "a9a3efb8c46edf37",
-        "type": "function",
-        "z": "77a4e3ed495f55d2",
-        "name": "前後GPS",
-        "func": "msg.payload={\n    lat:msg.payload.lat,\n    lon:msg.payload.lon,\n    latx:latx,\n    lony:lony,\n    //tstd:tstd,\n    //altd:altd,\n    name:msg.payload.name,\n    //alt:msg.payload.alt,\n    //tst:msg.payload.time,\n    //bearing:msg.payload.bearing,\n    //speed:msg.payload.speed,\n    //climb: msg.payload.climb,\n    //acc:(msg.payload.epx+msg.payload.epy)/2,\n    acc:msg.payload.acc,\n}\nlatx=msg.payload.lat;\nlony=msg.payload.lon;\n//tstd=msg.payload.tst;\n//altd=msg.payload.alt;\nreturn msg;\n",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "// ここに記述したコードは、ノードをデプロイした時に\n// 一度だけ実行されます。\nlatx=0;\nlony=0;\ntstd=0;\naltd=0;",
-        "finalize": "",
-        "libs": [],
-        "x": 180,
-        "y": 140,
-        "wires": [
-            [
-                "db257d8663dc5887"
-            ]
-        ]
-    },
-    {
-        "id": "be2710787e25109c",
-        "type": "rbe",
-        "z": "77a4e3ed495f55d2",
-        "name": "",
-        "func": "rbe",
-        "gap": "",
-        "start": "",
-        "inout": "out",
-        "septopics": true,
-        "property": "payload",
-        "topi": "topic",
-        "x": 670,
-        "y": 80,
-        "wires": [
-            [
-                "1d88c140133f9e3a"
+                "ab576d8c6c99af0a"
             ]
         ]
     },
@@ -4616,41 +3602,6 @@
         "wires": []
     },
     {
-        "id": "46459380ff5f50fd",
-        "type": "debug",
-        "z": "083b23ab72f662ce",
-        "name": "",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 550,
-        "y": 720,
-        "wires": []
-    },
-    {
-        "id": "9646ab7d37a40bbc",
-        "type": "function",
-        "z": "083b23ab72f662ce",
-        "name": "受信間隔測定",
-        "func": "date = new Date();\ntime=Date.now(date)\nmsg.payload=time-pre_time;\npre_time=time;\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "// ここに記述したコードは、ノードをデプロイした時に\n// 一度だけ実行されます。\npre_time=0",
-        "finalize": "",
-        "libs": [],
-        "x": 360,
-        "y": 720,
-        "wires": [
-            [
-                "46459380ff5f50fd"
-            ]
-        ]
-    },
-    {
         "id": "17907964acfb740a",
         "type": "mqtt in",
         "z": "083b23ab72f662ce",
@@ -4662,8 +3613,8 @@
         "nl": false,
         "rap": true,
         "rh": 0,
-        "x": 660,
-        "y": 620,
+        "x": 80,
+        "y": 840,
         "wires": [
             [
                 "c440e67f31f22188"
@@ -4689,8 +3640,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1300,
-        "y": 660,
+        "x": 620,
+        "y": 960,
         "wires": [
             []
         ]
@@ -4715,8 +3666,8 @@
         "reduceInit": "",
         "reduceInitType": "",
         "reduceFixup": "",
-        "x": 1130,
-        "y": 660,
+        "x": 450,
+        "y": 960,
         "wires": [
             [
                 "66a216fbaf6c2963"
@@ -4745,8 +3696,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 2,
-        "x": 830,
-        "y": 620,
+        "x": 230,
+        "y": 840,
         "wires": [
             [
                 "ec978f45f31e7498",
@@ -4777,8 +3728,8 @@
         "reduceInit": "",
         "reduceInitType": "",
         "reduceFixup": "",
-        "x": 1130,
-        "y": 600,
+        "x": 450,
+        "y": 900,
         "wires": [
             [
                 "a484f7ab951f7eb3"
@@ -4804,8 +3755,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1300,
-        "y": 600,
+        "x": 620,
+        "y": 900,
         "wires": [
             []
         ]
@@ -4821,28 +3772,10 @@
         "initialize": "// ここに記述したコードは、ノードをデプロイした時に\n// 一度だけ実行されます。\nzenku=0;\nglobal.set(\"genku1\",0)",
         "finalize": "",
         "libs": [],
-        "x": 1150,
-        "y": 540,
+        "x": 470,
+        "y": 840,
         "wires": [
             []
-        ]
-    },
-    {
-        "id": "dd4cae62d6103f25",
-        "type": "subflow:77a4e3ed495f55d2",
-        "z": "006e761ebec3950a",
-        "x": 870,
-        "y": 760,
-        "wires": [
-            [
-                "c1796f3c6d3f6050",
-                "c5389aa70a263afa",
-                "571b3414a69f344d"
-            ],
-            [
-                "2bb8ea3338364a82",
-                "a2eddb190dd00f06"
-            ]
         ]
     },
     {
@@ -4872,48 +3805,6 @@
         ]
     },
     {
-        "id": "b860eeab8d873def",
-        "type": "subflow:77a4e3ed495f55d2",
-        "z": "aeb7525ab85c57cf",
-        "name": "",
-        "x": 920,
-        "y": 700,
-        "wires": [
-            [
-                "65a264793457c4fe",
-                "663640312deeddb3"
-            ],
-            [
-                "ccc342630a35cdb4"
-            ]
-        ]
-    },
-    {
-        "id": "a1fd1f860e92d75b",
-        "type": "delay",
-        "z": "aeb7525ab85c57cf",
-        "name": "",
-        "pauseType": "rate",
-        "timeout": "5",
-        "timeoutUnits": "seconds",
-        "rate": "1",
-        "nbRateUnits": "1",
-        "rateUnits": "second",
-        "randomFirst": "1",
-        "randomLast": "5",
-        "randomUnits": "seconds",
-        "drop": true,
-        "allowrate": false,
-        "x": 730,
-        "y": 700,
-        "wires": [
-            [
-                "b860eeab8d873def",
-                "e39cebaf7717c7ce"
-            ]
-        ]
-    },
-    {
         "id": "215f506c83f21dab",
         "type": "mqtt out",
         "z": "aeb7525ab85c57cf",
@@ -4927,8 +3818,8 @@
         "correl": "",
         "expiry": "",
         "broker": "58bd0fd66116561d",
-        "x": 1340,
-        "y": 360,
+        "x": 1260,
+        "y": 460,
         "wires": []
     },
     {
@@ -4951,8 +3842,8 @@
         "onceDelay": 0.1,
         "topic": "",
         "payloadType": "date",
-        "x": 650,
-        "y": 780,
+        "x": 150,
+        "y": 700,
         "wires": [
             [
                 "3f3bee30c739e274"
@@ -4976,8 +3867,8 @@
         "output": "",
         "outputType": "msg",
         "outTz": "Asia/Tokyo",
-        "x": 870,
-        "y": 780,
+        "x": 370,
+        "y": 700,
         "wires": [
             [
                 "39ce8c7c29bed32f",
@@ -4997,8 +3888,8 @@
         "label": "サーバー時間",
         "format": "{{msg.payload}}",
         "layout": "row-spread",
-        "x": 1100,
-        "y": 820,
+        "x": 600,
+        "y": 740,
         "wires": []
     },
     {
@@ -5023,11 +3914,11 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 560,
-        "y": 660,
+        "x": 760,
+        "y": 700,
         "wires": [
             [
-                "a1fd1f860e92d75b"
+                "e458f4c249763f48"
             ]
         ]
     },
@@ -5054,26 +3945,9 @@
         "y": 760,
         "wires": [
             [
-                "dd4cae62d6103f25",
-                "499772b511981553"
+                "32be981d908c805e"
             ]
         ]
-    },
-    {
-        "id": "499772b511981553",
-        "type": "debug",
-        "z": "006e761ebec3950a",
-        "name": "",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 830,
-        "y": 820,
-        "wires": []
     },
     {
         "id": "90b8de7ecf37254f",
@@ -5089,8 +3963,8 @@
         "correl": "",
         "expiry": "",
         "broker": "58bd0fd66116561d",
-        "x": 760,
-        "y": 320,
+        "x": 540,
+        "y": 340,
         "wires": []
     },
     {
@@ -5101,10 +3975,10 @@
         "topic": "owntracks/nodered/sense3",
         "qos": "0",
         "datatype": "auto",
-        "broker": "ab278137ab70fd04",
+        "broker": "58bd0fd66116561d",
         "nl": false,
         "rap": false,
-        "x": 890,
+        "x": 430,
         "y": 60,
         "wires": [
             []
@@ -5116,9 +3990,9 @@
         "z": "aeb7525ab85c57cf",
         "name": "line3",
         "links": [
-            "c13e87947858f40a"
+            "5bc8b1cd9e2e17d8"
         ],
-        "x": 1185,
+        "x": 1395,
         "y": 680,
         "wires": []
     },
@@ -5130,8 +4004,8 @@
         "links": [
             "5bc8b1cd9e2e17d8"
         ],
-        "x": 1065,
-        "y": 720,
+        "x": 1015,
+        "y": 740,
         "wires": []
     },
     {
@@ -5142,12 +4016,11 @@
         "links": [
             "49005e76c77f4e29"
         ],
-        "x": 675,
-        "y": 280,
+        "x": 695,
+        "y": 180,
         "wires": [
             [
-                "6d4f20751b3cbc7a",
-                "0254017e5b726446"
+                "6d4f20751b3cbc7a"
             ]
         ]
     },
@@ -5157,55 +4030,19 @@
         "z": "083b23ab72f662ce",
         "name": "",
         "links": [
-            "c5389aa70a263afa"
+            "08dd34d8c42af572",
+            "49005e76c77f4e29",
+            "663640312deeddb3",
+            "961903cfc3f74408",
+            "c5389aa70a263afa",
+            "ce6f4b8bbd89b451"
         ],
-        "x": 995,
-        "y": 260,
+        "x": 835,
+        "y": 360,
         "wires": [
             [
                 "0254017e5b726446"
             ]
-        ]
-    },
-    {
-        "id": "c13e87947858f40a",
-        "type": "link in",
-        "z": "083b23ab72f662ce",
-        "name": "",
-        "links": [
-            "663640312deeddb3"
-        ],
-        "x": 995,
-        "y": 300,
-        "wires": [
-            [
-                "0254017e5b726446"
-            ]
-        ]
-    },
-    {
-        "id": "4b4ed9fc1c33ee51",
-        "type": "change",
-        "z": "aeb7525ab85c57cf",
-        "name": "kmh",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload.kmh",
-                "pt": "msg",
-                "to": "$round(payload.kmh*100)/100",
-                "tot": "jsonata"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 490,
-        "y": 800,
-        "wires": [
-            []
         ]
     },
     {
@@ -5717,7 +4554,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1640,
+        "x": 1580,
         "y": 180,
         "wires": [
             [
@@ -5736,7 +4573,7 @@
         "arraySpltType": "len",
         "stream": false,
         "addname": "",
-        "x": 1650,
+        "x": 1590,
         "y": 120,
         "wires": [
             [
@@ -5784,7 +4621,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1630,
+        "x": 1570,
         "y": 60,
         "wires": [
             [
@@ -5807,61 +4644,11 @@
         "randomLast": "5",
         "randomUnits": "seconds",
         "drop": true,
-        "x": 1470,
-        "y": 80,
+        "x": 1330,
+        "y": 100,
         "wires": [
             [
                 "bab8924852b7e11e"
-            ]
-        ]
-    },
-    {
-        "id": "26b191f6c8d61b13",
-        "type": "switch",
-        "z": "083b23ab72f662ce",
-        "name": "",
-        "property": "payload.name",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "eq",
-                "v": "select",
-                "vt": "flow"
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 1,
-        "x": 1250,
-        "y": 460,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "3c98624f852fd000",
-        "type": "change",
-        "z": "77a4e3ed495f55d2",
-        "name": "",
-        "rules": [
-            {
-                "t": "move",
-                "p": "payload.name",
-                "pt": "msg",
-                "to": "payload.layer",
-                "tot": "msg"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 510,
-        "y": 140,
-        "wires": [
-            [
-                "be2710787e25109c"
             ]
         ]
     },
@@ -5877,8 +4664,8 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1130,
-        "y": 680,
+        "x": 1150,
+        "y": 660,
         "wires": []
     },
     {
@@ -5898,17 +4685,379 @@
         "wires": []
     },
     {
-        "id": "7183509022fcf74e",
+        "id": "6b4f5fca4748ca94",
+        "type": "switch",
+        "z": "7adb20e994873399",
+        "name": "latx not 0",
+        "property": "payload.latx",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "neq",
+                "v": "0",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 320,
+        "y": 140,
+        "wires": [
+            [
+                "337ce3e2cbacb88f"
+            ]
+        ]
+    },
+    {
+        "id": "c1870a99c05faee7",
+        "type": "switch",
+        "z": "7adb20e994873399",
+        "name": "acc",
+        "property": "payload.acc",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "lt",
+                "v": "10",
+                "vt": "num"
+            },
+            {
+                "t": "lte",
+                "v": "20",
+                "vt": "num"
+            },
+            {
+                "t": "gt",
+                "v": "20",
+                "vt": "num"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 3,
+        "x": 750,
+        "y": 140,
+        "wires": [
+            [
+                "d536e62fe6d7532c"
+            ],
+            [
+                "f31fa2a1b468a1d8"
+            ],
+            [
+                "dad576be36711b22"
+            ]
+        ]
+    },
+    {
+        "id": "d536e62fe6d7532c",
         "type": "change",
-        "z": "083b23ab72f662ce",
+        "z": "7adb20e994873399",
+        "name": "acc10",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload.color",
+                "pt": "msg",
+                "to": "lime",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "payload.name",
+                "pt": "msg",
+                "to": "acc10",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 930,
+        "y": 140,
+        "wires": [
+            [
+                "564c5f0228438425",
+                "e33cebfd0265ad86"
+            ]
+        ]
+    },
+    {
+        "id": "f31fa2a1b468a1d8",
+        "type": "change",
+        "z": "7adb20e994873399",
+        "name": "acc20",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload.color",
+                "pt": "msg",
+                "to": "#FFCC00",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "payload.name",
+                "pt": "msg",
+                "to": "acc20",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 930,
+        "y": 180,
+        "wires": [
+            [
+                "564c5f0228438425",
+                "e33cebfd0265ad86"
+            ]
+        ]
+    },
+    {
+        "id": "dad576be36711b22",
+        "type": "change",
+        "z": "7adb20e994873399",
+        "name": "accbad",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload.color",
+                "pt": "msg",
+                "to": "red",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "payload.name",
+                "pt": "msg",
+                "to": "accbad",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 940,
+        "y": 220,
+        "wires": [
+            [
+                "e33cebfd0265ad86",
+                "564c5f0228438425"
+            ]
+        ]
+    },
+    {
+        "id": "564c5f0228438425",
+        "type": "function",
+        "z": "7adb20e994873399",
+        "name": "座標配列",
+        "func": "line=Array(2);\nline[0]=[msg.payload.latx,msg.payload.lony];\nline[1]=[msg.payload.lat,msg.payload.lon];\nmsg.payload={\n    name:i,\n    color:msg.payload.color,\n    weight:\"4\",\n    line:line,\n    layer: msg.payload.layer\n}\ni++;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "// ここに記述したコードは、ノードをデプロイした時に\n// 一度だけ実行されます。\ni=0;",
+        "finalize": "",
+        "libs": [],
+        "x": 1140,
+        "y": 140,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "6fbb29417bc6a496",
+        "type": "function",
+        "z": "7adb20e994873399",
+        "name": "2点間線配列",
+        "func": "if(i > 1200){\n    //tracks[j]=payload;\n    //global.set(\"tracks\",tracks)\n    i=0;\n    //j++;\n}\npayload[i]=msg.payload;\ni++;\nmsg.payload=payload;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "// ここに記述したコードは、ノードをデプロイした時に\n// 一度だけ実行されます。\npayload=Array();\ni=0;\nj=0;\ntracks=Array();",
+        "finalize": "",
+        "libs": [],
+        "x": 1150,
+        "y": 80,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "644d18d9981a2f19",
+        "type": "function",
+        "z": "7adb20e994873399",
+        "name": "前後GPS",
+        "func": "msg.payload={\n    lat:msg.payload.lat,\n    lon:msg.payload.lon,\n    latx:latx,\n    lony:lony,\n    //tstd:tstd,\n    //altd:altd,\n    name:msg.payload.name,\n    //alt:msg.payload.alt,\n    //tst:msg.payload.time,\n    //bearing:msg.payload.bearing,\n    //speed:msg.payload.speed,\n    //climb: msg.payload.climb,\n    //acc:(msg.payload.epx+msg.payload.epy)/2,\n    acc:msg.payload.acc,\n}\nlatx=msg.payload.lat;\nlony=msg.payload.lon;\n//tstd=msg.payload.tst;\n//altd=msg.payload.alt;\nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "// ここに記述したコードは、ノードをデプロイした時に\n// 一度だけ実行されます。\nlatx=0;\nlony=0;\ntstd=0;\naltd=0;",
+        "finalize": "",
+        "libs": [],
+        "x": 180,
+        "y": 140,
+        "wires": [
+            [
+                "6b4f5fca4748ca94"
+            ]
+        ]
+    },
+    {
+        "id": "39272912041aacc1",
+        "type": "rbe",
+        "z": "7adb20e994873399",
+        "name": "",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload",
+        "topi": "topic",
+        "x": 670,
+        "y": 80,
+        "wires": [
+            [
+                "c1870a99c05faee7"
+            ]
+        ]
+    },
+    {
+        "id": "337ce3e2cbacb88f",
+        "type": "change",
+        "z": "7adb20e994873399",
+        "name": "",
+        "rules": [
+            {
+                "t": "move",
+                "p": "payload.name",
+                "pt": "msg",
+                "to": "payload.layer",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 510,
+        "y": 140,
+        "wires": [
+            [
+                "39272912041aacc1"
+            ]
+        ]
+    },
+    {
+        "id": "e33cebfd0265ad86",
+        "type": "function",
+        "z": "7adb20e994873399",
+        "name": "座標配列mk2",
+        "func": "coordinate=Array(2);\ncoordinate[0]=msg.payload.lat;\ncoordinate[1]=msg.payload.lon;\n//line[i]=coordinate;\n\nif(j == 0){\n    payload[0]={\n        //line:line[i],\n        line:coordinate,\n        color:msg.payload.color,\n        weight:4,\n        name:\"line\"+j,\n        layer: msg.payload.layer,\n    }\n}\n\nif(color !=　msg.payload.color){\n   i=0;\n   j++;\n   line=Array();\n}\n\nif(k > 14400){\n    i=0;\n    J=0;\n    k=0;\n}\n\nline[i]=coordinate;\npayload[j]={\n    line:line,\n    color:msg.payload.color,\n    weight:4,\n    name:\"line\"+j,\n    layer: msg.payload.layer,\n    //k:k,\n    }\n\ncolor=msg.payload.color; \nmsg.payload=payload;\ni++;\nk++;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "// ここに記述したコードは、ノードをデプロイした時に\n// 一度だけ実行されます。\ni=0;\nj=0;\nk=0;\nline=Array();\npayload=Array();\ncolor=\"red\";",
+        "finalize": "",
+        "libs": [],
+        "x": 1150,
+        "y": 220,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "32be981d908c805e",
+        "type": "subflow:7adb20e994873399",
+        "z": "006e761ebec3950a",
+        "name": "",
+        "env": [],
+        "x": 860,
+        "y": 760,
+        "wires": [
+            [
+                "c1796f3c6d3f6050",
+                "571b3414a69f344d",
+                "c5389aa70a263afa"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "e458f4c249763f48",
+        "type": "subflow:7adb20e994873399",
+        "z": "aeb7525ab85c57cf",
+        "name": "",
+        "x": 1240,
+        "y": 700,
+        "wires": [
+            [
+                "663640312deeddb3",
+                "65a264793457c4fe"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "961903cfc3f74408",
+        "type": "link out",
+        "z": "006e761ebec3950a",
+        "name": "tracks1",
+        "links": [
+            "c13e87947858f40a",
+            "5bc8b1cd9e2e17d8"
+        ],
+        "x": 655,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "ac1e89e151cee2bf",
+        "type": "worldmap-tracks",
+        "z": "aeb7525ab85c57cf",
+        "name": "",
+        "depth": 20,
+        "layer": "combined",
+        "smooth": false,
+        "x": 1070,
+        "y": 400,
+        "wires": [
+            [
+                "65a264793457c4fe",
+                "08dd34d8c42af572"
+            ]
+        ]
+    },
+    {
+        "id": "08dd34d8c42af572",
+        "type": "link out",
+        "z": "aeb7525ab85c57cf",
+        "name": "tracks3",
+        "links": [
+            "5bc8b1cd9e2e17d8"
+        ],
+        "x": 1255,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "5e316521ba7d022c",
+        "type": "change",
+        "z": "aeb7525ab85c57cf",
         "name": "",
         "rules": [
             {
                 "t": "set",
-                "p": "payload",
+                "p": "payload.color",
                 "pt": "msg",
-                "to": "tracks1",
-                "tot": "global"
+                "to": "green",
+                "tot": "str"
             }
         ],
         "action": "",
@@ -5917,62 +5066,11 @@
         "to": "",
         "reg": false,
         "x": 780,
-        "y": 540,
+        "y": 400,
         "wires": [
             [
-                "0254017e5b726446"
+                "ac1e89e151cee2bf"
             ]
         ]
-    },
-    {
-        "id": "2bb8ea3338364a82",
-        "type": "function",
-        "z": "006e761ebec3950a",
-        "name": "配列格納",
-        "func": "if(color !=　msg.payload.color){\n   i++;\n}\ncolor=msg.payload.color;\npayload[i]=msg.payload;\nmsg.payload=payload;\n\nreturn msg;\n",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "// ここに記述したコードは、ノードをデプロイした時に\n// 一度だけ実行されます。\npayload=Array();\ni=0;\nj=0;\ntracks=Array();\ncolor=\"red\";",
-        "finalize": "",
-        "libs": [],
-        "x": 1080,
-        "y": 880,
-        "wires": [
-            [
-                "33fbd98ac66d1d46"
-            ]
-        ]
-    },
-    {
-        "id": "a2eddb190dd00f06",
-        "type": "debug",
-        "z": "006e761ebec3950a",
-        "name": "",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1070,
-        "y": 940,
-        "wires": []
-    },
-    {
-        "id": "ec37df91c93d7984",
-        "type": "debug",
-        "z": "006e761ebec3950a",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1310,
-        "y": 900,
-        "wires": []
     }
 ]
