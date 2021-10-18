@@ -28,6 +28,13 @@
         "info": ""
     },
     {
+        "id": "78d2ec05bc770adc",
+        "type": "tab",
+        "label": "gpsd",
+        "disabled": false,
+        "info": ""
+    },
+    {
         "id": "7adb20e994873399",
         "type": "subflow",
         "name": "LINE作成 ",
@@ -529,7 +536,7 @@
         "id": "ab278137ab70fd04",
         "type": "mqtt-broker",
         "name": "home2",
-        "broker": "192.168.24.56",
+        "broker": "192.168.24.13",
         "port": "1883",
         "clientid": "",
         "usetls": false,
@@ -772,13 +779,6 @@
                 "pt": "msg",
                 "to": "arrow",
                 "tot": "str"
-            },
-            {
-                "t": "move",
-                "p": "payload.track",
-                "pt": "msg",
-                "to": "payload.bearing",
-                "tot": "msg"
             }
         ],
         "action": "",
@@ -908,13 +908,13 @@
         "type": "mqtt in",
         "z": "006e761ebec3950a",
         "name": "",
-        "topic": "owntracks/GPS/pi",
+        "topic": "trip1/gps",
         "qos": "0",
         "datatype": "json",
         "broker": "58bd0fd66116561d",
         "nl": false,
         "rap": false,
-        "x": 110,
+        "x": 80,
         "y": 320,
         "wires": [
             [
@@ -1422,7 +1422,7 @@
             "5bc8b1cd9e2e17d8",
             "a9dd9c08d420fbc1"
         ],
-        "x": 275,
+        "x": 255,
         "y": 460,
         "wires": []
     },
@@ -1766,7 +1766,7 @@
         "topic": "owntracks/nodered/aquos/dump",
         "qos": "2",
         "datatype": "auto",
-        "broker": "58bd0fd66116561d",
+        "broker": "ab278137ab70fd04",
         "nl": false,
         "rap": false,
         "x": 210,
@@ -1985,33 +1985,6 @@
         "wires": [
             [
                 "a57c0d1dd5651c22"
-            ]
-        ]
-    },
-    {
-        "id": "f02c4714bc9a0fdd",
-        "type": "change",
-        "z": "006e761ebec3950a",
-        "name": "kmh",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload.kmh",
-                "pt": "msg",
-                "to": "$round(payload.speed*3.6*100)/100",
-                "tot": "jsonata"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 90,
-        "y": 480,
-        "wires": [
-            [
-                "9b89b3fde52dce8d"
             ]
         ]
     },
@@ -3381,11 +3354,11 @@
         "id": "e50ce16ce0fa8a66",
         "type": "worldmap-tracks",
         "z": "006e761ebec3950a",
-        "name": "",
-        "depth": "8000",
+        "name": "tracks1",
+        "depth": "14400",
         "layer": "single",
         "smooth": false,
-        "x": 530,
+        "x": 540,
         "y": 500,
         "wires": [
             [
@@ -3542,7 +3515,7 @@
         "type": "msg-size",
         "z": "006e761ebec3950a",
         "name": "",
-        "frequency": "min",
+        "frequency": "sec",
         "interval": 1,
         "statusContent": "tot",
         "estimation": false,
@@ -3555,7 +3528,7 @@
         "wires": [
             [],
             [
-                "f02c4714bc9a0fdd"
+                "9b89b3fde52dce8d"
             ]
         ]
     },
@@ -3966,23 +3939,6 @@
         "x": 540,
         "y": 340,
         "wires": []
-    },
-    {
-        "id": "960db9d1d66cca56",
-        "type": "mqtt in",
-        "z": "aeb7525ab85c57cf",
-        "name": "",
-        "topic": "owntracks/nodered/sense3",
-        "qos": "0",
-        "datatype": "auto",
-        "broker": "58bd0fd66116561d",
-        "nl": false,
-        "rap": false,
-        "x": 430,
-        "y": 60,
-        "wires": [
-            []
-        ]
     },
     {
         "id": "663640312deeddb3",
@@ -5021,11 +4977,11 @@
         "id": "ac1e89e151cee2bf",
         "type": "worldmap-tracks",
         "z": "aeb7525ab85c57cf",
-        "name": "",
-        "depth": 20,
-        "layer": "combined",
+        "name": "tracks3",
+        "depth": "1000",
+        "layer": "separate",
         "smooth": false,
-        "x": 1070,
+        "x": 1080,
         "y": 400,
         "wires": [
             [
@@ -5072,5 +5028,109 @@
                 "ac1e89e151cee2bf"
             ]
         ]
+    },
+    {
+        "id": "0e316a168ba9d8a3",
+        "type": "debug",
+        "z": "78d2ec05bc770adc",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 430,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "a67ae329a919da33",
+        "type": "mqtt in",
+        "z": "78d2ec05bc770adc",
+        "name": "",
+        "topic": "owntracks/gpsd/gd",
+        "qos": "0",
+        "datatype": "json",
+        "broker": "58bd0fd66116561d",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "x": 230,
+        "y": 220,
+        "wires": [
+            [
+                "0e316a168ba9d8a3"
+            ]
+        ]
+    },
+    {
+        "id": "60a4b33d3baaf464",
+        "type": "gpsd",
+        "z": "78d2ec05bc770adc",
+        "name": "",
+        "hostname": "192.168.24.15",
+        "port": "2947",
+        "tpv": true,
+        "sky": false,
+        "info": false,
+        "device": false,
+        "gst": false,
+        "att": false,
+        "x": 190,
+        "y": 300,
+        "wires": [
+            [
+                "3ad84d7b9c455905"
+            ]
+        ]
+    },
+    {
+        "id": "3ad84d7b9c455905",
+        "type": "debug",
+        "z": "78d2ec05bc770adc",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 390,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "765ac40722e01d5d",
+        "type": "catch",
+        "z": "78d2ec05bc770adc",
+        "name": "",
+        "scope": null,
+        "uncaught": false,
+        "x": 230,
+        "y": 400,
+        "wires": [
+            [
+                "4f564f0ca4024799"
+            ]
+        ]
+    },
+    {
+        "id": "4f564f0ca4024799",
+        "type": "debug",
+        "z": "78d2ec05bc770adc",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 440,
+        "y": 400,
+        "wires": []
     }
 ]
