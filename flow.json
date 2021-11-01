@@ -533,31 +533,6 @@
         "height": 1
     },
     {
-        "id": "ab278137ab70fd04",
-        "type": "mqtt-broker",
-        "name": "home2",
-        "broker": "192.168.24.13",
-        "port": "1883",
-        "clientid": "",
-        "usetls": false,
-        "protocolVersion": "4",
-        "keepalive": "60",
-        "cleansession": true,
-        "birthTopic": "",
-        "birthQos": "0",
-        "birthPayload": "",
-        "birthMsg": {},
-        "closeTopic": "",
-        "closeQos": "0",
-        "closePayload": "",
-        "closeMsg": {},
-        "willTopic": "",
-        "willQos": "0",
-        "willPayload": "",
-        "willMsg": {},
-        "sessionExpiry": ""
-    },
-    {
         "id": "ee74ce02a36b648c",
         "type": "ui_group",
         "name": "方角距離",
@@ -568,133 +543,23 @@
         "collapse": false
     },
     {
-        "id": "230b3c921bbf4313",
+        "id": "481262f1bd8d73b9",
         "type": "ui_spacer",
-        "z": "006e761ebec3950a",
-        "name": "spacer",
-        "group": "1e861d64.540cc3",
-        "order": 14,
-        "width": 6,
-        "height": 1
-    },
-    {
-        "id": "c888b312839f185d",
-        "type": "ui_spacer",
-        "z": "006e761ebec3950a",
-        "name": "spacer",
-        "group": "1e861d64.540cc3",
-        "order": 16,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "f18f9b06ec5a7b39",
-        "type": "ui_spacer",
-        "z": "006e761ebec3950a",
+        "z": "083b23ab72f662ce",
         "name": "spacer",
         "group": "1e861d64.540cc3",
         "order": 18,
-        "width": 1,
+        "width": 17,
         "height": 1
     },
     {
-        "id": "f9852950c32db898",
+        "id": "7c946dedba12b555",
         "type": "ui_spacer",
-        "z": "006e761ebec3950a",
-        "name": "spacer",
-        "group": "1e861d64.540cc3",
-        "order": 20,
-        "width": 15,
-        "height": 1
-    },
-    {
-        "id": "15a9c4e5b4442a1f",
-        "type": "ui_spacer",
-        "z": "006e761ebec3950a",
-        "name": "spacer",
-        "group": "1e861d64.540cc3",
-        "order": 21,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "9d012f4a071b7e1f",
-        "type": "ui_spacer",
-        "z": "006e761ebec3950a",
+        "z": "083b23ab72f662ce",
         "name": "spacer",
         "group": "1e861d64.540cc3",
         "order": 22,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "e486b595be3cbf93",
-        "type": "ui_spacer",
-        "z": "006e761ebec3950a",
-        "name": "spacer",
-        "group": "1e861d64.540cc3",
-        "order": 23,
-        "width": 15,
-        "height": 1
-    },
-    {
-        "id": "bd684fe8e4d98f7a",
-        "type": "ui_spacer",
-        "z": "006e761ebec3950a",
-        "name": "spacer",
-        "group": "1e861d64.540cc3",
-        "order": 24,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "285c3fe54e58086d",
-        "type": "ui_spacer",
-        "z": "006e761ebec3950a",
-        "name": "spacer",
-        "group": "1e861d64.540cc3",
-        "order": 25,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "17d76d6071589c4e",
-        "type": "ui_spacer",
-        "z": "006e761ebec3950a",
-        "name": "spacer",
-        "group": "1e861d64.540cc3",
-        "order": 26,
-        "width": 15,
-        "height": 1
-    },
-    {
-        "id": "dc020f838704b3da",
-        "type": "ui_spacer",
-        "z": "006e761ebec3950a",
-        "name": "spacer",
-        "group": "1e861d64.540cc3",
-        "order": 28,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "f3aab561527ca674",
-        "type": "ui_spacer",
-        "z": "006e761ebec3950a",
-        "name": "spacer",
-        "group": "1e861d64.540cc3",
-        "order": 30,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "84dbb19ddde98f4d",
-        "type": "ui_spacer",
-        "z": "006e761ebec3950a",
-        "name": "spacer",
-        "group": "1e861d64.540cc3",
-        "order": 32,
-        "width": 15,
+        "width": 17,
         "height": 1
     },
     {
@@ -1622,8 +1487,8 @@
         "tooltip": "",
         "place": "Select option",
         "group": "1e861d64.540cc3",
-        "order": 13,
-        "width": 4,
+        "order": 17,
+        "width": 5,
         "height": 1,
         "passthru": true,
         "multiple": false,
@@ -1710,7 +1575,7 @@
         "label": "AUTO MOVE",
         "tooltip": "",
         "group": "1e861d64.540cc3",
-        "order": 11,
+        "order": 16,
         "width": 3,
         "height": 1,
         "passthru": true,
@@ -1757,57 +1622,6 @@
         "wires": [
             []
         ]
-    },
-    {
-        "id": "46f661ade89f616e",
-        "type": "mqtt in",
-        "z": "083b23ab72f662ce",
-        "name": "",
-        "topic": "owntracks/nodered/aquos/dump",
-        "qos": "2",
-        "datatype": "auto",
-        "broker": "ab278137ab70fd04",
-        "nl": false,
-        "rap": false,
-        "x": 210,
-        "y": 1140,
-        "wires": [
-            [
-                "02cbd5b6a7fe3c62"
-            ]
-        ]
-    },
-    {
-        "id": "02cbd5b6a7fe3c62",
-        "type": "json",
-        "z": "083b23ab72f662ce",
-        "name": "",
-        "property": "payload",
-        "action": "",
-        "pretty": false,
-        "x": 450,
-        "y": 1140,
-        "wires": [
-            [
-                "4c574c9b79fefdd5"
-            ]
-        ]
-    },
-    {
-        "id": "4c574c9b79fefdd5",
-        "type": "debug",
-        "z": "083b23ab72f662ce",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 640,
-        "y": 1140,
-        "wires": []
     },
     {
         "id": "2b5ecaf48353e3a6",
@@ -1934,8 +1748,8 @@
         "type": "worldmap",
         "z": "083b23ab72f662ce",
         "name": "",
-        "lat": "",
-        "lon": "",
+        "lat": "33.886031",
+        "lon": "130.873593",
         "zoom": "",
         "layer": "",
         "cluster": "",
@@ -1947,7 +1761,7 @@
         "zoomlock": "false",
         "hiderightclick": "false",
         "coords": "none",
-        "showgrid": "false",
+        "showgrid": "true",
         "allowFileDrop": "false",
         "path": "/worldmap",
         "x": 1220,
@@ -2401,7 +2215,7 @@
         "label": "API",
         "tooltip": "",
         "group": "1e861d64.540cc3",
-        "order": 12,
+        "order": 15,
         "width": 3,
         "height": 1,
         "passthru": true,
@@ -3504,8 +3318,8 @@
         "output": "",
         "outputType": "msg",
         "outTz": "Asia/Tokyo",
-        "x": 540,
-        "y": 1000,
+        "x": 560,
+        "y": 880,
         "wires": [
             []
         ]
@@ -3652,17 +3466,17 @@
         "type": "switch",
         "z": "083b23ab72f662ce",
         "name": "",
-        "property": "payload.number",
+        "property": "payload.reset",
         "propertyType": "msg",
         "rules": [
             {
-                "t": "eq",
-                "v": "0",
+                "t": "lt",
+                "v": "1000",
                 "vt": "num"
             },
             {
-                "t": "neq",
-                "v": "0",
+                "t": "gte",
+                "v": "1000",
                 "vt": "num"
             }
         ],
@@ -3845,7 +3659,8 @@
         "wires": [
             [
                 "39ce8c7c29bed32f",
-                "dfc5f4969beb8527"
+                "dfc5f4969beb8527",
+                "e1e6d181a34ee1f8"
             ]
         ]
     },
@@ -4147,7 +3962,7 @@
         "z": "006e761ebec3950a",
         "group": "1e861d64.540cc3",
         "name": "gps誤差",
-        "order": 9,
+        "order": 12,
         "width": 6,
         "height": 1,
         "format": "<font size=\"3\"><div ng-bind-html=\"msg.payload\"> </div></font> ",
@@ -4207,8 +4022,8 @@
         "z": "aeb7525ab85c57cf",
         "group": "1e861d64.540cc3",
         "name": "gps誤差",
-        "order": 10,
-        "width": 4,
+        "order": 14,
+        "width": 6,
         "height": 1,
         "format": "<font size=\"3\"><div ng-bind-html=\"msg.payload\"> </div></font> ",
         "storeOutMessages": true,
@@ -4259,7 +4074,7 @@
         "z": "083b23ab72f662ce",
         "name": "3方角",
         "group": "1e861d64.540cc3",
-        "order": 19,
+        "order": 11,
         "width": 3,
         "height": 3,
         "gtype": "compass",
@@ -4284,7 +4099,7 @@
         "type": "ui_text",
         "z": "083b23ab72f662ce",
         "group": "1e861d64.540cc3",
-        "order": 31,
+        "order": 21,
         "width": 3,
         "height": 1,
         "name": "3距離",
@@ -4301,7 +4116,7 @@
         "z": "083b23ab72f662ce",
         "name": "2方角",
         "group": "1e861d64.540cc3",
-        "order": 17,
+        "order": 10,
         "width": 3,
         "height": 3,
         "gtype": "compass",
@@ -4326,7 +4141,7 @@
         "type": "ui_text",
         "z": "083b23ab72f662ce",
         "group": "1e861d64.540cc3",
-        "order": 29,
+        "order": 20,
         "width": 3,
         "height": 1,
         "name": "2距離",
@@ -4343,7 +4158,7 @@
         "z": "083b23ab72f662ce",
         "name": "1方角",
         "group": "1e861d64.540cc3",
-        "order": 15,
+        "order": 9,
         "width": 3,
         "height": 3,
         "gtype": "compass",
@@ -4368,7 +4183,7 @@
         "type": "ui_text",
         "z": "083b23ab72f662ce",
         "group": "1e861d64.540cc3",
-        "order": 27,
+        "order": 19,
         "width": 3,
         "height": 1,
         "name": "1距離",
@@ -4441,7 +4256,7 @@
         "type": "switch",
         "z": "083b23ab72f662ce",
         "name": "",
-        "property": "payload.number",
+        "property": "payload.reset",
         "propertyType": "msg",
         "rules": [
             {
@@ -4514,7 +4329,8 @@
         "y": 180,
         "wires": [
             [
-                "3d81841ed88a5f3e"
+                "3d81841ed88a5f3e",
+                "481fa11abf41e7e4"
             ]
         ]
     },
@@ -5069,6 +4885,7 @@
         "id": "60a4b33d3baaf464",
         "type": "gpsd",
         "z": "78d2ec05bc770adc",
+        "d": true,
         "name": "",
         "hostname": "192.168.24.15",
         "port": "2947",
@@ -5131,6 +4948,65 @@
         "statusType": "auto",
         "x": 440,
         "y": 400,
+        "wires": []
+    },
+    {
+        "id": "d478104d74d19e0c",
+        "type": "inject",
+        "z": "006e761ebec3950a",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 320,
+        "y": 880,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e1e6d181a34ee1f8",
+        "type": "ui_text",
+        "z": "083b23ab72f662ce",
+        "group": "1e861d64.540cc3",
+        "order": 13,
+        "width": 11,
+        "height": 1,
+        "name": "",
+        "label": "サーバー時間",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "x": 600,
+        "y": 660,
+        "wires": []
+    },
+    {
+        "id": "481fa11abf41e7e4",
+        "type": "debug",
+        "z": "083b23ab72f662ce",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1760,
+        "y": 220,
         "wires": []
     }
 ]
